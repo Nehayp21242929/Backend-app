@@ -21,6 +21,7 @@ const Navbar = () => {
           style={{
             fontSize: "24px",
             fontWeight: "bold",
+            fontFamily: "'Montserrat', sans-serif" ,
             cursor: "pointer",
             background: "linear-gradient(90deg, #1e3c72, #2a5298)",
             WebkitBackgroundClip: "text",
@@ -92,16 +93,16 @@ const Navbar = () => {
               onClick={() => setDropdownOpen(!isDropdownOpen)}
             />
             {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-50">
+              <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 z-50 border border-gray-200 dark:border-gray-700">
                 <button
                   onClick={() => navigate("/profile")}
-                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="block w-full text-left px-4 py-2  text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   Profile
                 </button>
                 <button
                   onClick={() => navigate("/settings")}
-                  className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="block w-full text-left px-4 py-2    text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   Settings
                 </button>
@@ -148,8 +149,8 @@ const Navbar = () => {
               <button onClick={() => navigate("/upload")} className="flex items-center space-x-1 hover:underline">
                 <FaUpload /> Upload
               </button>
-              <button onClick={() => navigate("/profile")} className="hover:underline">Profile</button>
-              <button onClick={() => navigate("/settings")} className="hover:underline">Settings</button>
+              <button onClick={() => navigate("/profile")} className="hover:underline text-gray-700 dark:text-gray-200">Profile</button>
+              <button onClick={() => navigate("/settings")} className="hover:underline text-gray-700 dark:text-gray-200">Settings</button>
               <button onClick={() => navigate("/logout")} className="text-red-500 hover:underline">Logout</button>
             </>
           )}
