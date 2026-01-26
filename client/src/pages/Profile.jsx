@@ -1,42 +1,63 @@
 import { useAuth } from "../context/AuthContext";
-import { logoutUser } from "../api/auth";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Profile() {
-  const { user, setUser } = useAuth();
-  const navigate = useNavigate();
+  const { user } = useAuth();
+  const [tab, setTab] = useState("gallery");
 
-  if (!user) return <h2>Please login</h2>;
-
-  const handleLogout = async () => {
-    try {
-      await logoutUser();
-      setUser(null);
-      navigate("/");
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  if (!user) return <p className="p-6">Loading...</p>;
 
   return (
-    <div style={{ padding: "30px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h1>Profile</h1>
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+
+      {/* Header */}
+      <div className="flex gap-6 items-center p-6 border-b border-slate-200 dark:border-slate-800">
+        <img
+          src={user.avatar}
+          alt="avatar"
+          className="w-28 h-28 rounded-full object-cover border-2 border-slate-300 dark:border-slate-700"
+        />
+
+        <div>
+          <h2 className="text-2xl font-semibold">{user.fullname}</h2>
+          <p className="text-slate-500 dark:text-slate-400">@{user.username}</p>
+          <p className="text-sm text-slate-600 dark:text-slate-300">{user.email}</p>
+        </div>
       </div>
 
-      <img src={user.avatar} style={styles.avatar} />
+      {/* Tabs */}
+      <div className="flex gap-8 px-6 border-b border-slate-200 dark:border-slate-800">
+        <Tab label="Gallery" active={tab === "gallery"} onClick={() => setTab("gallery")} />
+        <Tab label="Subscribers" active={tab === "subscribers"} onClick={() => setTab("subscribers")} />
+        <Tab label="Subscribed Channels" active={tab === "subscriptions"} onClick={() => setTab("subscriptions")} />
+      </div>
 
-      <h2>{user.fullname}</h2>
-      <p>@{user.username}</p>
-      <p>{user.email}</p>
+      {/* Content */}
+      <div className="p-6">
+        {tab === "gallery" && <p>Your gallery will appear here</p>}
+        {tab === "subscribers" && <p>Your subscribers will appear here</p>}
+        {tab === "subscriptions" && <p>Channels you subscribed to will appear here</p>}
+      </div>
+
     </div>
   );
 }
 
-const styles = {
-  avatar: {
-    width: "120px",
-    borderRadius: "50%",
-    marginTop: "20px"
-  }
-};
+/* ---------- Tab Component ---------- */
+
+function Tab({ label, active, onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className={`
+        pb-3 text-sm font-medium transition
+        ${active 
+          ? "border-b-2 border-blue-500 text-blue-600 dark:text-blue-400"
+          : "border-b-2 border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+        }
+      `}
+    >
+      {label}
+    </button>
+  );
+}

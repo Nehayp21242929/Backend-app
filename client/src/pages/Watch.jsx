@@ -4,7 +4,7 @@ const Watch = () => {
   const { id } = useParams()
 
   return (
-    <div className="p-6">
+    <div className="p-6 bg-white dark:bg-black">
       <h1 className="text-2xl font-bold">Watch Page</h1>
       <p className="text-gray-400">Video ID: {id}</p>
 

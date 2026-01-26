@@ -13,7 +13,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-100 dark:bg-gray-900 px-4 py-2 shadow-md flex items-center justify-between">
+    <nav className="bg-gray-400 border-white dark:bg-gray-900 px-4 py-2 shadow-md flex items-center justify-between">
       {/* Left: Brand Name */}
       <div className="flex items-center space-x-4">
         <h2
@@ -23,7 +23,7 @@ const Navbar = () => {
             fontWeight: "bold",
             fontFamily: "'Montserrat', sans-serif" ,
             cursor: "pointer",
-            background: "linear-gradient(90deg, #1e3c72, #2a5298)",
+            background: "linear-gradient(90deg, #3895D3, #58CCED)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
@@ -53,7 +53,7 @@ const Navbar = () => {
         <input
           type="text"
           placeholder="Search..."
-          className="hidden sm:block px-3 py-1 rounded border border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200
+          className="hidden sm:block px-3 py-1 rounded border border-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200
                 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 ease-in-out w-70 focus:w-90"
          />
 
@@ -70,7 +70,7 @@ const Navbar = () => {
         {/* Notifications */}
         {user && (
           <div className="relative">
-            <FaBell className="text-xl cursor-pointer" />
+            <FaBell className="text-xl cursor-pointer text-black dark:text-white" />
             <span className="absolute -top-1 -right-2 bg-red-500 text-white rounded-full text-xs px-1">
               3
             </span>
@@ -89,7 +89,7 @@ const Navbar = () => {
             <img
               src={user.avatar}
               alt="avatar"
-              className="w-8 h-8 rounded-full cursor-pointer"
+              className="w-10 h-10 rounded-full cursor-pointer"
               onClick={() => setDropdownOpen(!isDropdownOpen)}
             />
             {isDropdownOpen && (
