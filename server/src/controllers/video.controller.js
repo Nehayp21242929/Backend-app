@@ -55,6 +55,32 @@ const uploadVideo = asyncHandler(async (req, res) => {
     .json(new ApiResponse(201, video, "Video uploaded successfully"));
 });
 
+const galleryController = asyncHandler(async(req,res) =>{
+  const userId= req.params.userId || req.user._id;
+
+  if(!userId){
+    throw new ApiError(400, "user's id is required")
+
+  }
+
+  const video = await Video.find({owner: userId})
+  .sort({createdAt :-1})
+  .select( "videoFile thumbnail title duration views createdAt" );
+
+  return res
+  .json(
+    new ApiResponse(200, video ,"User videos fetched")
+  )
+});
+
+const getVideoByIdController = asyncHandler(async (req, res) => {
+  const videoId = req.params.id;
+  const video = await Video.findById(videoId); // Mongoose
+  if (!video) throw new ApiError(404, "Video not found");
+  res.status(200).json(new ApiResponse(200, video, "Video fetched successfully"));
+});
+
+
 /*
   GET /api/videos
   Watch page → all published videos from all users
@@ -211,6 +237,9 @@ export {
     // getAllVideos,
     // getVideoById,
     // getChannelVideos,
-    uploadVideo
+    uploadVideo,
+    galleryController,
+    getVideoByIdController
+    
     
 }

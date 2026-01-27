@@ -1,5 +1,7 @@
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
+import Gallery from "../profile/gallery";
+
 
 export default function Profile() {
   const { user } = useAuth();
@@ -34,7 +36,7 @@ export default function Profile() {
 
       {/* Content */}
       <div className="p-6">
-        {tab === "gallery" && <p>Your gallery will appear here</p>}
+        {tab === "gallery" && <Gallery userId={user._id} />}
         {tab === "subscribers" && <p>Your subscribers will appear here</p>}
         {tab === "subscriptions" && <p>Channels you subscribed to will appear here</p>}
       </div>

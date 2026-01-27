@@ -14,10 +14,10 @@ export const getAllVideos = () => {
 
 // Get single video
 export const getVideoById = (videoId) => {
-  return API.get(`/videos/${videoId}`);
+  return API.get(`/videos/playvideo/${videoId}`);
 };
 
 // Get all videos of a channel
-export const getChannelVideos = (channelId) => {
-  return API.get(`/videos/channel/${channelId}`);
+export const getChannelVideos = (userId) => {
+  return API.get(`/videos/gallery/${userId}`);
 };
