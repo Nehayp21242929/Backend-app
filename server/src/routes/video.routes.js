@@ -28,7 +28,7 @@ router.route("/gallery/:userId").get( verifyJWT, galleryController);
 
 router.route("/playvideo/:id").get( verifyJWT, getVideoByIdController);
 
-router.route("/allVideos/:userId").get( verifyJWT, getAllVideos);
+router.route("/allVideos").get( getAllVideos);
 
 
 // // watch page

@@ -9,7 +9,7 @@ export const uploadVideo = (formData) => {
 
 // Get all published videos (home/watch page)
 export const getAllVideos = () => {
-  return API.get("/videos/");
+  return API.get("/videos/allVideos");
 };
 
 // Get single video

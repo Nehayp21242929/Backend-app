@@ -18,7 +18,7 @@ const LoginForm = ({ onSuccess }) => {
     e.preventDefault();
     try {
       const res = await loginUser(form);
-      setUser(res.data.data.user);   // ✅ correct
+      setUser(res.data.data.user); 
       onSuccess();
     } catch (err) {
       alert(err.response?.data?.message || "Login failed Try again!!!");
@@ -27,27 +27,30 @@ const LoginForm = ({ onSuccess }) => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
-
-      <input
-        name="email"
-        required
-        placeholder="Email"
-        onChange={handleChange}
-        className="w-full p-2 bg-gray-100 dark:bg-gray-700 rounded text-black dark:text-white"
-      />
-
-      <input
-        name="password"
-        type="password"
-        required
-        placeholder="Password"
-        onChange={handleChange}
-        className="w-full p-2 bg-gray-100 dark:bg-gray-700 rounded text-black dark:text-white"
-      />
-
-      <button type="submit" className="w-full bg-blue-600 p-2 rounded text-white hover:bg-blue-500">
-        Login
-      </button>
+       <div className="flex items-center gap-3">
+           <label className="w-20 whitespace-nowrap dark:text-white">Email:</label>
+             <input
+               name="email"
+               required
+               placeholder="Type... Your Email"
+               onChange={handleChange}
+               className="flex-1 p-2 bg-gray-100 dark:bg-gray-700 rounded text-black dark:text-white"
+             />
+        </div>
+        <div className="flex items-center gap-3">
+            <label className="w-20 whitespace-nowrap dark:text-white">Password :</label>
+              <input
+                name="password"
+                type="password"
+                required
+                placeholder="Your Password"
+                onChange={handleChange}
+                className="flex-1 p-2 bg-gray-100 dark:bg-gray-700 rounded text-black dark:text-white"
+              />
+        </div>
+        <button type="submit" className="w-full bg-blue-600 p-2 rounded text-white hover:bg-blue-500">
+             Login
+        </button>
     </form>
   );
 };

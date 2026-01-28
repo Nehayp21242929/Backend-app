@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getChannelVideos } from "../api/video"; // adjust path if needed
+import { getChannelVideos } from "../api/video"; 
 import { Link } from "react-router-dom";
 
 export default function Gallery({ userId }) {
@@ -37,7 +37,7 @@ export default function Gallery({ userId }) {
           <img
             src={video.thumbnail}
             alt={video.title}
-            className="w-full h-44 object-cover"
+            className="w-full aspect-video object-cover"
           />
 
           <div className="p-3">

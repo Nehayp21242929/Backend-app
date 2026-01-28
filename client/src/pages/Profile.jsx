@@ -28,7 +28,7 @@ export default function Profile() {
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-8 px-6 border-b border-slate-200 dark:border-slate-800">
+      <div className="flex gap-8 px-6 pt-2 border-b border-slate-200 dark:border-slate-800">
         <Tab label="Gallery" active={tab === "gallery"} onClick={() => setTab("gallery")} />
         <Tab label="Subscribers" active={tab === "subscribers"} onClick={() => setTab("subscribers")} />
         <Tab label="Subscribed Channels" active={tab === "subscriptions"} onClick={() => setTab("subscriptions")} />

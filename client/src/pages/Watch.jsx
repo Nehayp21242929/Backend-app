@@ -42,6 +42,7 @@ const Watch = () => {
         />
 
         <h1 className="mt-4 text-2xl font-bold">{video.title}</h1>
+        <p className="mt-2 text-gray-500"> {new Date(video.createdAt).toLocaleDateString()}</p>
         <p className="mt-2 text-gray-500">{video.description}</p>
 
       </div>

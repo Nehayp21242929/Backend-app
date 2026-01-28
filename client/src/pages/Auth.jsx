@@ -16,7 +16,7 @@ const Auth = () => {
 
 
         <h2 className="text-2xl font-bold text-center mb-5 text-gray-900 dark:text-white">
-          {isLogin ? "Login to MediaFun" : "Create your MediaFun account"}
+          {isLogin ? "Login to SkillStage" : "Create your SkillStage account"}
         </h2>
 
         {isLogin ? (
