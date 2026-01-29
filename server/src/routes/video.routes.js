@@ -26,7 +26,7 @@ router.route("/upload").post(
 
 router.route("/gallery/:userId").get( verifyJWT, galleryController);
 
-router.route("/playvideo/:id").get( verifyJWT, getVideoByIdController);
+router.route("/playvideo/:id").get( getVideoByIdController);
 
 router.route("/allVideos").get( getAllVideos);
 

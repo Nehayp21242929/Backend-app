@@ -35,8 +35,8 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-4 ml-6 text-gray-800 dark:text-gray-200 font-medium">
           <button onClick={() => navigate("/")} className="hover:underline">Home</button>
           <button onClick={() => navigate("/trending")} className="hover:underline">Trending</button>
-          <button onClick={() => navigate("/videos")} className="hover:underline ">Videos</button>
-          <button onClick={() => navigate("/photos")} className="hover:underline ">Photos</button>
+          <button onClick={() => navigate("/VideoPage")} className="hover:underline ">Videos</button>
+          <button onClick={() => navigate("/PhotoPage")} className="hover:underline ">Photos</button>
           <button
             onClick={() => navigate("/explore")}
             className="flex items-center space-x-1 hover:underline"
@@ -137,8 +137,8 @@ const Navbar = () => {
         <div className="absolute top-14 right-2 mt-2 w-50 bg-white dark:bg-gray-800 shadow-lg rounded-md z-50 border py-2 border-gray-200 dark:border-gray-700 flex flex-col space-y-3">
           <button onClick={() => navigate("/")} className="block w-full px-4 py-2  text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Home</button>
           <button onClick={() => navigate("/trending")} className="block w-full px-4 py-2  text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Trending</button>
-          <button onClick={() => navigate("/videos")} className="block w-full px-4 py-2  text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Videos</button>
-          <button onClick={() => navigate("/photos")} className="block w-full px-4 py-2  text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Photos</button>
+          <button onClick={() => navigate("/VideoPage")} className="block w-full px-4 py-2  text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Videos</button>
+          <button onClick={() => navigate("/PhotoPage")} className="block w-full px-4 py-2  text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Photos</button>
           <button onClick={() => navigate("/explore")} className="block w-full px-4 py-2  text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Explore</button>
           {user && (
             <>

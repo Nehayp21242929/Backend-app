@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import VideoGrid from "../components/VideoGrid";
 import { getAllVideos } from "../api/video";
 
-const Home = () => {
+const Videos = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -19,10 +19,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="p-6 bg-blue-50 dark:bg-blue-950">
+    <div className="p-6 bg-blue-50 dark:bg-black">
       <VideoGrid videos={videos} />
     </div>
   );
 };
 
-export default Home;
+export default Videos;

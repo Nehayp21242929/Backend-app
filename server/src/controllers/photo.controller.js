@@ -7,7 +7,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 
 const uploadPhoto = asyncHandler(async (req, res) => {
-  const { title, description, duration } = req.body;
+  const { title, description,duration } = req.body;
 
   if (!title || !description || !duration) {
     throw new ApiError(401, "All fields are required");
@@ -68,7 +68,7 @@ const getPhotoByIdController = asyncHandler(async (req, res) => {
 
 const getAllPhotos = asyncHandler(async(req,res) => {
   const photo = await Photo.find({})
-  .select("photoFile thumbnail title duration views createdAt");
+  .select("photoFile title views createdAt");
   return res
   .json(
     new ApiResponse(200, photo, "Photos fetched successfully"));

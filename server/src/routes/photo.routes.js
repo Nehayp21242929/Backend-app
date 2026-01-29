@@ -23,7 +23,7 @@ router.route("/upload").post(
 
 router.route("/gallery/:userId").get( verifyJWT ,galleryPhotoController);
 
-router.route("/playPhoto/:id").get(verifyJWT , getPhotoByIdController);
+router.route("/playPhoto/:id").get( getPhotoByIdController);
 
 router.route("/allPhotos").get( getAllPhotos);
 
