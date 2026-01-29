@@ -4,7 +4,9 @@ import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Watch from "./pages/Watch";
 import Auth from "./pages/Auth";
-import UploadVideo from "./pages/UploadVideo";
+import UploadVideo from "./uploading/UploadVideo";
+import UploadForm from "./uploading/UploadForm";
+import UploadPhoto from "./uploading/UploadPhoto";
 import { AuthProvider } from "./context/AuthContext";
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Auth />} />
         <Route path="/upload" element={<UploadVideo />} />
-         <Route path="/watch/:id" element={<Watch />} />
+        <Route path="/watch/:id" element={<Watch />} />
+        <Route path="/uploadForm" element={<UploadForm />} />
+        <Route path="/uploadPhoto" element={<UploadPhoto />} />
 
       </Routes>
     </AuthProvider>

@@ -1,6 +1,7 @@
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
 import GalleryVideos from "../profile/gallery";
+import GalleryPhotos from "../profile/GalleryPhotos";
 
 
 export default function Profile() {
@@ -40,7 +41,7 @@ export default function Profile() {
        </div>
       {/* Content */}
       <div className="p-6">
-        {tab === "gallery" && tab2 === "photos" && <p>Gallery photos will be here</p>}
+        {tab === "gallery" && tab2 === "photos" && <GalleryPhotos userId={user._id} />}
         {tab === "gallery" && tab2 === "videos" && <GalleryVideos userId={user._id} />}
         {tab === "liked" && tab2 === "photos" && <p>Your liked photos will appear here</p>}
         {tab === "liked" && tab2 === "videos" && <p>Your liked videos will appear here</p>}

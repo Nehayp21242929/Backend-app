@@ -13,11 +13,11 @@ export const getAllPhotos = () => {
 };
 
 // Get single video
-export const getPhotoById = (videoId) => {
+export const getPhotoById = (photoId) => {
   return API.get(`/photos/playphoto/${photoId}`);
 };
 
 // Get all videos of a channel
 export const getChannelPhoto = (userId) => {
-  return API.get(`/photo/gallery/${userId}`);
+  return API.get(`/photos/gallery/${userId}`);
 };

@@ -1,6 +1,10 @@
 import API from "./auth"; // reuse your axios instance
 
 // Upload video
+export const uploadForm = () => {
+  return API
+}
+
 export const uploadVideo = (formData) => {
   return API.post("/videos/upload", formData, {
     headers: { "Content-Type": "multipart/form-data" }

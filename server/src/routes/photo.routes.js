@@ -21,9 +21,9 @@ router.route("/upload").post(
   uploadPhoto
 );
 
-router.route("/gallery/:userId").get( verifyJWT, galleryPhotoController);
+router.route("/gallery/:userId").get( verifyJWT ,galleryPhotoController);
 
-router.route("/playPhoto/:id").get( verifyJWT, getPhotoByIdController);
+router.route("/playPhoto/:id").get(verifyJWT , getPhotoByIdController);
 
 router.route("/allPhotos").get( getAllPhotos);
 
