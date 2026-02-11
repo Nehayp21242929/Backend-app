@@ -31,7 +31,7 @@ const Home = () => {
       
       {/* 🎥 VIDEOS SECTION */}
       <section>
-        <h2 className="text-xl font-semibold mb-5 text-slate-700 dark:text-slate-200">
+        <h2 className="text-xl mb-5 font-bold text-slate-900 dark:text-slate-200">
           Trending Demo
         </h2>
 
@@ -40,7 +40,7 @@ const Home = () => {
 
       {/* 🖼 PHOTOS SECTION */}
       <section>
-        <h2 className="text-xl font-semibold mb-5 text-slate-700 dark:text-slate-200">
+        <h2 className="text-xl font-bold text-slate-900 mb-5 dark:text-slate-200">
           Recent Post
         </h2>
 
